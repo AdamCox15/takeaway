@@ -115,3 +115,26 @@
 
 // canWin(10)
 // // true
+
+let count = 0
+
+const canWin = n => {
+  
+  count++
+  console.log('canWin invocation', n, count)
+  
+  if (n < 2) {
+    return false
+  }
+
+  let legalMoves = [2, 3, 5]
+
+  for (let i = 0; i < legalMoves.length; i++) {
+    // console.log('Iteration:', count, n, legalMoves[i])
+    
+    if (!canWin(n - legalMoves[i])) {
+      return true
+    }
+  }
+  return false
+}
